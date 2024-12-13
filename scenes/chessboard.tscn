@@ -1,0 +1,345 @@
+[gd_scene load_steps=5 format=4 uid="uid://c4y6p5ixm43pe"]
+
+[ext_resource type="Texture2D" uid="uid://b6yghiegdnyjp" path="res://assets/chess_board_tiles.png" id="1_mk85c"]
+[ext_resource type="FontFile" uid="uid://cll0cvb3uli4d" path="res://assets/PixelOperator8.ttf" id="2_igfob"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_c2rgw"]
+texture = ExtResource("1_mk85c")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_yqqak"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_c2rgw")
+
+[node name="board" type="TileMapLayer"]
+position = Vector2(-16, 16)
+tile_map_data = PackedByteArray("AAAAAP//AAAAAAAAAAACAP//AAAAAAAAAAAGAP//AAAAAAAAAAABAP//AAABAAAAAAADAP//AAABAAAAAAAEAP//AAAAAAAAAAAFAP//AAABAAAAAAAHAP//AAABAAAAAAAAAP7/AAABAAAAAAAAAPz/AAABAAAAAAAAAPr/AAABAAAAAAAAAPj/AAABAAAAAAABAPn/AAABAAAAAAABAPv/AAABAAAAAAABAP3/AAABAAAAAAACAP7/AAABAAAAAAACAPz/AAABAAAAAAACAPr/AAABAAAAAAACAPj/AAABAAAAAAAEAPj/AAABAAAAAAAEAPr/AAABAAAAAAADAPn/AAABAAAAAAADAPv/AAABAAAAAAAEAPz/AAABAAAAAAADAP3/AAABAAAAAAAEAP7/AAABAAAAAAAFAP3/AAABAAAAAAAGAPz/AAABAAAAAAAHAPv/AAABAAAAAAAGAPr/AAABAAAAAAAFAPn/AAABAAAAAAAGAPj/AAABAAAAAAAHAPn/AAABAAAAAAAFAPv/AAABAAAAAAAHAP3/AAABAAAAAAAGAP7/AAABAAAAAAAHAP7/AAAAAAAAAAAGAP3/AAAAAAAAAAAHAPz/AAAAAAAAAAAGAPv/AAAAAAAAAAAHAPr/AAAAAAAAAAAGAPn/AAAAAAAAAAAHAPj/AAAAAAAAAAAFAPj/AAAAAAAAAAAFAPr/AAAAAAAAAAAEAPn/AAAAAAAAAAADAPj/AAAAAAAAAAADAPr/AAAAAAAAAAAEAPv/AAAAAAAAAAAFAPz/AAAAAAAAAAAEAP3/AAAAAAAAAAAFAP7/AAAAAAAAAAADAP7/AAAAAAAAAAADAPz/AAAAAAAAAAACAPv/AAAAAAAAAAACAPn/AAAAAAAAAAABAPj/AAAAAAAAAAAAAPn/AAAAAAAAAAABAPr/AAAAAAAAAAAAAPv/AAAAAAAAAAABAPz/AAAAAAAAAAACAP3/AAAAAAAAAAAAAP3/AAAAAAAAAAABAP7/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_yqqak")
+collision_enabled = false
+
+[node name="labels" type="Node2D" parent="."]
+
+[node name="columns" type="Node2D" parent="labels"]
+
+[node name="a" type="Label" parent="labels/columns"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "a"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="b" type="Label" parent="labels/columns"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 32.0
+offset_right = 64.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "b
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="c" type="Label" parent="labels/columns"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 64.0
+offset_right = 96.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "c"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="d" type="Label" parent="labels/columns"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 96.0
+offset_right = 128.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "d"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="e" type="Label" parent="labels/columns"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 128.0
+offset_right = 160.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "e"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="f" type="Label" parent="labels/columns"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 160.0
+offset_right = 192.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "f"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="g" type="Label" parent="labels/columns"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 192.0
+offset_right = 224.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "g"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="h" type="Label" parent="labels/columns"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 224.0
+offset_right = 256.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "h"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="rows" type="Node2D" parent="labels"]
+position = Vector2(-32, -32)
+
+[node name="1" type="Label" parent="labels/rows"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 32.0
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "1"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="2" type="Label" parent="labels/rows"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -32.0
+offset_right = 32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "2"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="3" type="Label" parent="labels/rows"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -64.0
+offset_right = 32.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="4" type="Label" parent="labels/rows"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -96.0
+offset_right = 32.0
+offset_bottom = -64.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "4"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="5" type="Label" parent="labels/rows"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -128.0
+offset_right = 32.0
+offset_bottom = -96.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="6" type="Label" parent="labels/rows"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -160.0
+offset_right = 32.0
+offset_bottom = -128.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "6"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="7" type="Label" parent="labels/rows"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -192.0
+offset_right = 32.0
+offset_bottom = -160.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "7"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="8" type="Label" parent="labels/rows"]
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -224.0
+offset_right = 32.0
+offset_bottom = -192.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_igfob")
+theme_override_font_sizes/font_size = 16
+text = "8"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true

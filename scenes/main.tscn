@@ -1,0 +1,67 @@
+[gd_scene load_steps=4 format=3 uid="uid://bfly24huoap2f"]
+
+[ext_resource type="Script" path="res://scripts/manager.gd" id="1_pswhs"]
+[ext_resource type="PackedScene" uid="uid://c4y6p5ixm43pe" path="res://scenes/chessboard.tscn" id="2_iv4mf"]
+[ext_resource type="PackedScene" uid="uid://d0yx13jf10558" path="res://scenes/piece.tscn" id="3_o25cj"]
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_pswhs")
+
+[node name="board" parent="." instance=ExtResource("2_iv4mf")]
+position = Vector2(0, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(128, -128)
+drag_left_margin = 0.0
+
+[node name="black" type="Node2D" parent="."]
+
+[node name="pawn_a" parent="black" instance=ExtResource("3_o25cj")]
+position = Vector2(0, -192)
+
+[node name="pawn_b" parent="black" instance=ExtResource("3_o25cj")]
+position = Vector2(32, -192)
+
+[node name="pawn_c" parent="black" instance=ExtResource("3_o25cj")]
+position = Vector2(64, -192)
+
+[node name="pawn_d" parent="black" instance=ExtResource("3_o25cj")]
+position = Vector2(96, -192)
+
+[node name="pawn_e" parent="black" instance=ExtResource("3_o25cj")]
+position = Vector2(128, -192)
+
+[node name="pawn_f" parent="black" instance=ExtResource("3_o25cj")]
+position = Vector2(160, -192)
+
+[node name="pawn_g" parent="black" instance=ExtResource("3_o25cj")]
+position = Vector2(192, -192)
+
+[node name="pawn_h" parent="black" instance=ExtResource("3_o25cj")]
+position = Vector2(224, -192)
+
+[node name="white" type="Node2D" parent="."]
+
+[node name="pawn_a" parent="white" instance=ExtResource("3_o25cj")]
+position = Vector2(0, -32)
+
+[node name="pawn_b" parent="white" instance=ExtResource("3_o25cj")]
+position = Vector2(32, -32)
+
+[node name="pawn_c" parent="white" instance=ExtResource("3_o25cj")]
+position = Vector2(64, -32)
+
+[node name="pawn_d" parent="white" instance=ExtResource("3_o25cj")]
+position = Vector2(96, -32)
+
+[node name="pawn_e" parent="white" instance=ExtResource("3_o25cj")]
+position = Vector2(128, -32)
+
+[node name="pawn_f" parent="white" instance=ExtResource("3_o25cj")]
+position = Vector2(160, -32)
+
+[node name="pawn_g" parent="white" instance=ExtResource("3_o25cj")]
+position = Vector2(192, -32)
+
+[node name="pawn_h" parent="white" instance=ExtResource("3_o25cj")]
+position = Vector2(224, -32)
