@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://d0yx13jf10558"]
+[gd_scene load_steps=4 format=3 uid="uid://d0yx13jf10558"]
 
-[ext_resource type="Script" path="res://scenes/piece.gd" id="1_te2wx"]
+[ext_resource type="Script" path="res://scripts/piece.gd" id="1_uu0p8"]
+[ext_resource type="Script" path="res://scenes/click.gd" id="2_mjwaj"]
 
-[node name="piece" type="Sprite2D"]
-script = ExtResource("1_te2wx")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dw4b0"]
+size = Vector2(42, 42)
+
+[node name="Piece" type="Sprite2D"]
+script = ExtResource("1_uu0p8")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_mjwaj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_dw4b0")

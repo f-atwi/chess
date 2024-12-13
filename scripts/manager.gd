@@ -2,8 +2,8 @@ extends Node2D
 
 const TILE_SIZE = 32
 
-@onready var black: Node2D = $black
-@onready var white: Node2D = $white
+@onready var black: Node2D = $board/Back
+@onready var white: Node2D = $board/White
 
 var turn := true
 
