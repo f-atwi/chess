@@ -5,62 +5,63 @@
 [ext_resource type="PackedScene" uid="uid://d0yx13jf10558" path="res://scenes/piece.tscn" id="3_o25cj"]
 
 [node name="Main" type="Node2D"]
-script = ExtResource("1_pswhs")
 
 [node name="Board" parent="." instance=ExtResource("2_iv4mf")]
+unique_name_in_owner = true
+script = ExtResource("1_pswhs")
 
 [node name="Black" type="Node2D" parent="Board"]
 
 [node name="PawnA" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(0, 6)
+initial_position_board = null
 
 [node name="PawnB" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(1, 6)
+initial_position_board = null
 
 [node name="PawnC" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(2, 6)
+initial_position_board = null
 
 [node name="PawnD" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(3, 6)
+initial_position_board = null
 
 [node name="PawnE" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(4, 6)
+initial_position_board = null
 
 [node name="PawnF" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(5, 6)
+initial_position_board = null
 
 [node name="PawnG" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(6, 6)
+initial_position_board = null
 
 [node name="PawnH" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(7, 6)
+initial_position_board = null
 
 [node name="White" type="Node2D" parent="Board"]
 
 [node name="PawnA" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(0, 1)
+initial_position_board = null
 
 [node name="PawnB" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(1, 1)
+initial_position_board = null
 
 [node name="PawnC" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(2, 1)
+initial_position_board = null
 
 [node name="PawnD" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(3, 1)
+initial_position_board = null
 
 [node name="PawnE" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(4, 1)
+initial_position_board = null
 
 [node name="PawnF" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(5, 1)
+initial_position_board = null
 
 [node name="PawnG" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(6, 1)
+initial_position_board = null
 
 [node name="PawnH" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_board_position = Vector2i(7, 1)
+initial_position_board = null
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="Board"]
 position = Vector2(168, -168)
 drag_left_margin = 0.0
