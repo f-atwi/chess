@@ -6,7 +6,7 @@ const HIGHLIGHT_TILE_ATLAS = Vector2i(2, 1)
 const HIGHLIGHT_PIECE_ATLAS = Vector2i(0, 2)
 
 @export var rotate_black := false
-
+ 
 var turn := true
 var highlighted: Array[Vector2i] = []
 
@@ -44,23 +44,15 @@ func unhighlight() -> void:
 		unhighlight_tile(tile)
 
 
-func _is_valid_tile(coords: Vector2i) -> bool:
-	return (
-		coords.x >= 0
-		and coords.x <= 7
-		and coords.y <= -1
-		and coords.y >= -8
-	)
-
 func _get_original_tile(coords: Vector2i) -> Vector2i:
 	if coords.x % 2 == -coords.y % 2:
-		return WHITE_TILE_ATLAS
-	return BLACK_TILE_ATLAS
+		return BLACK_TILE_ATLAS
+	return WHITE_TILE_ATLAS
 
 
 func _is_empty(coords: Vector2i) -> bool:
 	# TODO: optimize
-	var pieces: Array[Piece] = (black.get_children()  + white.get_children()) as Array[Piece]
+	var pieces := (black.get_children()  + white.get_children()) as Array[Piece]
 	for piece in pieces:
 		if piece.position_board == coords:
 			return false
