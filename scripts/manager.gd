@@ -1,28 +1,68 @@
-extends Node2D
+extends TileMapLayer
 
-const TILE_SIZE = 32
+const BLACK_TILE_ATLAS = Vector2i(0, 1)
+const WHITE_TILE_ATLAS = Vector2i(1, 1)
+const HIGHLIGHT_TILE_ATLAS = Vector2i(2, 1)
+const HIGHLIGHT_PIECE_ATLAS = Vector2i(0, 2)
 
-@onready var board: TileMapLayer = %Board
-@onready var black: Node2D = $Board/Black
-@onready var white: Node2D = $Board/White
+@export var rotate_black := false
 
 var turn := true
+var highlighted: Array[Vector2i] = []
+
+@onready var black: Node2D = $Black
+@onready var white: Node2D = $White
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-func highlight_tile(coords: Vector2i) -> void:
-	board.set_cell(board_to_map(coords), 1, Vector2i(2, 1))
-	
-func board_to_map(coords_board: Vector2i) -> Vector2i:
-	coords_board.y = -coords_board.y + 1
-	return coords_board
 
-func map_to_board(coords_map: Vector2i) -> Vector2i:
-	coords_map.y = -coords_map.y - 1
-	return coords_map
+
+func _set_tile(coords: Vector2i, atlas: Vector2i) -> void:
+	set_cell(coords, 1, atlas)
+
+
+func highlight_tile(coords: Vector2i) -> void:
+	highlighted.append(coords)
+	_set_tile(coords, HIGHLIGHT_TILE_ATLAS)
+
+func highlight_piece(coords: Vector2i) -> void:
+	highlighted.append(coords)
+	_set_tile(coords, HIGHLIGHT_PIECE_ATLAS)
+
+func unhighlight_tile(coords: Vector2i) -> void:
+	_set_tile(coords, _get_original_tile(coords))
+	
+func unhighlight() -> void:
+	for tile in highlighted:
+		unhighlight_tile(tile)
+
+
+func _is_valid_tile(coords: Vector2i) -> bool:
+	return (
+		coords.x >= 0
+		and coords.x <= 7
+		and coords.y <= -1
+		and coords.y >= -8
+	)
+
+func _get_original_tile(coords: Vector2i) -> Vector2i:
+	if coords.x % 2 == -coords.y % 2:
+		return WHITE_TILE_ATLAS
+	return BLACK_TILE_ATLAS
+
+
+func _is_empty(coords: Vector2i) -> bool:
+	# TODO: optimize
+	var pieces: Array[Piece] = (black.get_children()  + white.get_children()) as Array[Piece]
+	for piece in pieces:
+		if piece.position_board == coords:
+			return false
+	return true
+			

@@ -1,1 +1,1 @@
-extends "res://scripts/piece.gd"
+extends Behaviour

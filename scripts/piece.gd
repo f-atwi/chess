@@ -1,7 +1,8 @@
+class_name Piece
 extends Sprite2D
 
 enum Type {PAWN, ROOK, KNIGHT, BISHOP, QUEEN, KING}
-enum Allegiance {WHITE=1, BLACK=-1}
+enum Allegiance {WHITE=-1, BLACK=1}
 
 const TEXTURE_PATH = "res://assets/{color}_{piece_type}.png"
 const BEHAVIOUR_SCRIPTS = {
@@ -19,11 +20,11 @@ const BEHAVIOUR_SCRIPTS = {
 var position_board: Vector2i:
 	set(value):
 		position_board = value
-		value.y = -value.y - 1
 		position = board.map_to_local(value)
 
 var _allegiance: Allegiance = Allegiance.WHITE
 var _first_move := true
+var _selected := false
 
 var behaviour: Behaviour
 
@@ -31,9 +32,9 @@ var behaviour: Behaviour
 
 
 func _ready() -> void:
-	position_board = initial_position_board
+	position_board = Vector2i(initial_position_board.x, -initial_position_board.y)
 	_allegiance = Allegiance.get(get_parent().name.to_upper())
-	if _allegiance == Allegiance.BLACK:
+	if board.rotate_black and _allegiance == Allegiance.BLACK:
 		rotate(PI)
 	texture = load(_get_texture_path(TEXTURE_PATH))
 	_get_behaviour()
@@ -42,6 +43,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
+
 func _get_texture_path(texture_format: String) -> String:
 	return texture_format.format({
 		"color": get_parent().name.to_lower(),
@@ -49,20 +51,10 @@ func _get_texture_path(texture_format: String) -> String:
 	})
 
 
-func _move_from_row_relative(row: String, step: int) -> String:
-	var new_pos := int(row) - 1 + step
-	assert(new_pos >= 0 and new_pos <= 7)
-	return str(new_pos)
-
-
 func _move_from_col_relative(col: String, step: int) -> String:
 	var new_pos := col.unicode_at(0) - "a".unicode_at(0) + step
 	assert(new_pos >= 0 and new_pos <= 7)
 	return char(new_pos + "a".unicode_at(0))
-
-
-func _move_relative(pos: String, step_col: int, step_row: int) -> String:
-	return _move_from_col_relative(pos[0], step_col) + _move_from_row_relative(pos[1], step_row)
 
 
 func to_chess_notation(pos: Vector2i) -> String:
@@ -74,4 +66,11 @@ func _get_behaviour() -> void:
 
 
 func select() -> void:
-	board.highlight_tile(position_board)
+	if _selected:
+		board.unhighlight()
+	else:
+		board.highlight_piece(position_board)
+		for tile in behaviour.get_valid_moves(position_board, _allegiance, _first_move):
+			board.highlight_tile(tile)
+		
+	_selected = not _selected

@@ -5,7 +5,7 @@
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_yhr0y"]
 texture = ExtResource("1_2ormq")
-texture_region_size = Vector2i(42, 42)
+texture_region_size = Vector2i(44, 44)
 0:0/0 = 0
 1:0/0 = 0
 2:0/next_alternative_id = 3
@@ -14,13 +14,14 @@ texture_region_size = Vector2i(42, 42)
 1:1/0 = 0
 2:1/next_alternative_id = 2
 2:1/0 = 0
+0:2/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_yqqak"]
-tile_size = Vector2i(42, 42)
+tile_size = Vector2i(44, 44)
 sources/1 = SubResource("TileSetAtlasSource_yhr0y")
 
 [node name="Board" type="TileMapLayer"]
-tile_map_data = PackedByteArray("AAAAAP//AQAAAAEAAAACAP//AQAAAAEAAAAGAP//AQAAAAEAAAABAP//AQABAAEAAAADAP//AQABAAEAAAAEAP//AQAAAAEAAAAFAP//AQABAAEAAAAHAP//AQABAAEAAAAAAP7/AQABAAEAAAAAAPz/AQABAAEAAAAAAPr/AQABAAEAAAAAAPj/AQABAAEAAAABAPn/AQABAAEAAAABAPv/AQABAAEAAAABAP3/AQABAAEAAAACAP7/AQABAAEAAAACAPz/AQABAAEAAAACAPr/AQABAAEAAAACAPj/AQABAAEAAAAEAPj/AQABAAEAAAAEAPr/AQABAAEAAAADAPn/AQABAAEAAAADAPv/AQABAAEAAAAEAPz/AQABAAEAAAADAP3/AQABAAEAAAAEAP7/AQABAAEAAAAFAP3/AQABAAEAAAAGAPz/AQABAAEAAAAHAPv/AQABAAEAAAAGAPr/AQABAAEAAAAFAPn/AQABAAEAAAAGAPj/AQABAAEAAAAHAPn/AQABAAEAAAAFAPv/AQABAAEAAAAHAP3/AQABAAEAAAAGAP7/AQABAAEAAAAHAP7/AQAAAAEAAAAGAP3/AQAAAAEAAAAHAPz/AQAAAAEAAAAGAPv/AQAAAAEAAAAHAPr/AQAAAAEAAAAGAPn/AQAAAAEAAAAHAPj/AQAAAAEAAAAFAPj/AQAAAAEAAAAFAPr/AQAAAAEAAAAEAPn/AQAAAAEAAAADAPj/AQAAAAEAAAADAPr/AQAAAAEAAAAEAPv/AQAAAAEAAAAFAPz/AQAAAAEAAAAEAP3/AQAAAAEAAAAFAP7/AQAAAAEAAAADAP7/AQAAAAEAAAADAPz/AQAAAAEAAAACAPv/AQAAAAEAAAACAPn/AQAAAAEAAAABAPj/AQAAAAEAAAAAAPn/AQAAAAEAAAABAPr/AQAAAAEAAAAAAPv/AQAAAAEAAAABAPz/AQAAAAEAAAACAP3/AQAAAAEAAAAAAP3/AQAAAAEAAAABAP7/AQAAAAEAAAD//wAAAQACAAAAAAAAAAAAAQACAAAAAAABAAAAAQACAAAAAAACAAAAAQACAAAAAAADAAAAAQACAAAAAAAEAAAAAQACAAAAAAAFAAAAAQACAAAAAAAGAAAAAQACAAAAAAAHAAAAAQACAAAAAAAIAAAAAQACAAAAAAD/////AQACAAAAAAD///7/AQACAAAAAAD///3/AQACAAAAAAD///z/AQACAAAAAAD///v/AQACAAAAAAD///r/AQACAAAAAAD///n/AQACAAAAAAD///j/AQACAAAAAAD///f/AQACAAAAAAAAAPf/AQACAAAAAAABAPf/AQACAAAAAAACAPf/AQACAAAAAAADAPf/AQACAAAAAAAEAPf/AQACAAAAAAAFAPf/AQACAAAAAAAGAPf/AQACAAAAAAAHAPf/AQACAAAAAAAIAPf/AQACAAAAAAAIAPj/AQACAAAAAAAIAPn/AQACAAAAAAAIAPr/AQACAAAAAAAIAPv/AQACAAAAAAAIAPz/AQACAAAAAAAIAP3/AQACAAAAAAAIAP7/AQACAAAAAAAIAP//AQACAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAP//AQABAAEAAAACAP//AQABAAEAAAAGAP//AQABAAEAAAABAP//AQAAAAEAAAADAP//AQAAAAEAAAAEAP//AQABAAEAAAAFAP//AQAAAAEAAAAHAP//AQAAAAEAAAAAAP7/AQAAAAEAAAAAAPz/AQAAAAEAAAAAAPr/AQAAAAEAAAAAAPj/AQACAAAAAAABAPn/AQAAAAEAAAABAPv/AQAAAAEAAAABAP3/AQAAAAEAAAACAP7/AQAAAAEAAAACAPz/AQAAAAEAAAACAPr/AQAAAAEAAAACAPj/AQACAAAAAAAEAPj/AQACAAAAAAAEAPr/AQAAAAEAAAADAPn/AQAAAAEAAAADAPv/AQAAAAEAAAAEAPz/AQAAAAEAAAADAP3/AQAAAAEAAAAEAP7/AQAAAAEAAAAFAP3/AQAAAAEAAAAGAPz/AQAAAAEAAAAHAPv/AQAAAAEAAAAGAPr/AQAAAAEAAAAFAPn/AQAAAAEAAAAGAPj/AQACAAAAAAAHAPn/AQAAAAEAAAAFAPv/AQAAAAEAAAAHAP3/AQAAAAEAAAAGAP7/AQAAAAEAAAAHAP7/AQABAAEAAAAGAP3/AQABAAEAAAAHAPz/AQABAAEAAAAGAPv/AQABAAEAAAAHAPr/AQABAAEAAAAGAPn/AQABAAEAAAAHAPj/AQACAAAAAAAFAPj/AQACAAAAAAAFAPr/AQABAAEAAAAEAPn/AQABAAEAAAADAPj/AQACAAAAAAADAPr/AQABAAEAAAAEAPv/AQABAAEAAAAFAPz/AQABAAEAAAAEAP3/AQABAAEAAAAFAP7/AQABAAEAAAADAP7/AQABAAEAAAADAPz/AQABAAEAAAACAPv/AQABAAEAAAACAPn/AQABAAEAAAABAPj/AQACAAAAAAAAAPn/AQABAAEAAAABAPr/AQABAAEAAAAAAPv/AQABAAEAAAABAPz/AQABAAEAAAACAP3/AQABAAEAAAAAAP3/AQABAAEAAAABAP7/AQABAAEAAAD//wAAAQACAAAAAAAAAAAAAQAAAAEAAAABAAAAAQABAAEAAAACAAAAAQAAAAEAAAADAAAAAQABAAEAAAAEAAAAAQAAAAEAAAAFAAAAAQABAAEAAAAGAAAAAQAAAAEAAAAHAAAAAQABAAEAAAAIAAAAAQACAAAAAAD/////AQACAAAAAAD///7/AQACAAAAAAD///3/AQACAAAAAAD///z/AQACAAAAAAD///v/AQACAAAAAAD///r/AQACAAAAAAD///n/AQACAAAAAAD///j/AQACAAAAAAAIAPj/AQACAAAAAAAIAPn/AQACAAAAAAAIAPr/AQACAAAAAAAIAPv/AQACAAAAAAAIAPz/AQACAAAAAAAIAP3/AQACAAAAAAAIAP7/AQACAAAAAAAIAP//AQACAAAAAAAEAAEAAQACAAAAAAAIAAEAAQACAAAAAAAHAAEAAQACAAAAAAAGAAEAAQACAAAAAAAFAAEAAQACAAAAAAADAAEAAQACAAAAAAACAAEAAQACAAAAAAABAAEAAQACAAAAAAAAAAEAAQACAAAAAAD//wEAAQACAAAAAAA=")
 tile_set = SubResource("TileSet_yqqak")
 collision_enabled = false
 
@@ -29,14 +30,15 @@ collision_enabled = false
 [node name="Columns" type="Node2D" parent="Labels"]
 
 [node name="a" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 42.0
-offset_bottom = 42.0
+offset_top = 44.0
+offset_right = 44.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -47,15 +49,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="b" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 42.0
-offset_right = 84.0
-offset_bottom = 42.0
+offset_left = 44.0
+offset_top = 44.0
+offset_right = 88.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -67,15 +70,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="c" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 84.0
-offset_right = 126.0
-offset_bottom = 42.0
+offset_left = 88.0
+offset_top = 44.0
+offset_right = 132.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -86,15 +90,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="d" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 126.0
-offset_right = 168.0
-offset_bottom = 42.0
+offset_left = 132.0
+offset_top = 44.0
+offset_right = 176.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -105,15 +110,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="e" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 168.0
-offset_right = 210.0
-offset_bottom = 42.0
+offset_left = 176.0
+offset_top = 44.0
+offset_right = 220.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -124,15 +130,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="f" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 210.0
-offset_right = 252.0
-offset_bottom = 42.0
+offset_left = 220.0
+offset_top = 44.0
+offset_right = 264.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -143,15 +150,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="g" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 252.0
-offset_right = 294.0
-offset_bottom = 42.0
+offset_left = 264.0
+offset_top = 44.0
+offset_right = 308.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -162,15 +170,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="h" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 294.0
-offset_right = 336.0
-offset_bottom = 42.0
+offset_left = 308.0
+offset_top = 44.0
+offset_right = 352.0
+offset_bottom = 88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -181,15 +190,15 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="a2" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_top = -378.0
-offset_right = 42.0
-offset_bottom = -336.0
+offset_top = -352.0
+offset_right = 44.0
+offset_bottom = -308.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -200,16 +209,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="b2" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 42.0
-offset_top = -378.0
-offset_right = 84.0
-offset_bottom = -336.0
+offset_left = 44.0
+offset_top = -352.0
+offset_right = 88.0
+offset_bottom = -308.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -221,16 +230,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="c2" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 84.0
-offset_top = -378.0
-offset_right = 126.0
-offset_bottom = -336.0
+offset_left = 88.0
+offset_top = -352.0
+offset_right = 132.0
+offset_bottom = -308.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -241,16 +250,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="d2" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 126.0
-offset_top = -378.0
-offset_right = 168.0
-offset_bottom = -336.0
+offset_left = 132.0
+offset_top = -352.0
+offset_right = 176.0
+offset_bottom = -308.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -261,16 +270,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="e2" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 168.0
-offset_top = -378.0
-offset_right = 210.0
-offset_bottom = -336.0
+offset_left = 176.0
+offset_top = -352.0
+offset_right = 220.0
+offset_bottom = -308.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -281,16 +290,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="f2" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 210.0
-offset_top = -378.0
-offset_right = 252.0
-offset_bottom = -336.0
+offset_left = 220.0
+offset_top = -352.0
+offset_right = 264.0
+offset_bottom = -308.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -301,16 +310,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="g2" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 252.0
-offset_top = -378.0
-offset_right = 294.0
-offset_bottom = -336.0
+offset_left = 264.0
+offset_top = -352.0
+offset_right = 308.0
+offset_bottom = -308.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -321,16 +330,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="h2" type="Label" parent="Labels/Columns"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 294.0
-offset_top = -378.0
-offset_right = 336.0
-offset_bottom = -336.0
+offset_left = 308.0
+offset_top = -352.0
+offset_right = 352.0
+offset_bottom = -308.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -343,14 +352,14 @@ metadata/_edit_use_anchors_ = true
 [node name="Rows" type="Node2D" parent="Labels"]
 
 [node name="1" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -42.0
+offset_left = -44.0
+offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -361,15 +370,14 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="2" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -84.0
-offset_bottom = -42.0
+offset_left = -44.0
+offset_top = -44.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -380,15 +388,15 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="3" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -126.0
-offset_bottom = -84.0
+offset_left = -44.0
+offset_top = -88.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -399,15 +407,15 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="4" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -168.0
-offset_bottom = -126.0
+offset_left = -44.0
+offset_top = -132.0
+offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -418,15 +426,15 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="5" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -210.0
-offset_bottom = -168.0
+offset_left = -44.0
+offset_top = -176.0
+offset_bottom = -132.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -437,15 +445,15 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="6" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -252.0
-offset_bottom = -210.0
+offset_left = -44.0
+offset_top = -220.0
+offset_bottom = -176.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -456,15 +464,15 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="7" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -294.0
-offset_bottom = -252.0
+offset_left = -44.0
+offset_top = -264.0
+offset_bottom = -220.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -475,15 +483,15 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="8" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -42.0
-offset_top = -336.0
-offset_bottom = -294.0
+offset_left = -44.0
+offset_top = -308.0
+offset_bottom = -264.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -494,15 +502,15 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="12" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 336.0
-offset_top = -42.0
-offset_right = 378.0
+offset_left = 352.0
+offset_right = 396.0
+offset_bottom = 44.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -513,16 +521,15 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="13" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 336.0
-offset_top = -84.0
-offset_right = 378.0
-offset_bottom = -42.0
+offset_left = 352.0
+offset_top = -44.0
+offset_right = 396.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -533,16 +540,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="14" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 336.0
-offset_top = -126.0
-offset_right = 378.0
-offset_bottom = -84.0
+offset_left = 352.0
+offset_top = -88.0
+offset_right = 396.0
+offset_bottom = -44.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -553,16 +560,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="15" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 336.0
-offset_top = -168.0
-offset_right = 378.0
-offset_bottom = -126.0
+offset_left = 352.0
+offset_top = -132.0
+offset_right = 396.0
+offset_bottom = -88.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -573,16 +580,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="16" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 336.0
-offset_top = -210.0
-offset_right = 378.0
-offset_bottom = -168.0
+offset_left = 352.0
+offset_top = -177.0
+offset_right = 396.0
+offset_bottom = -133.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -593,16 +600,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="17" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 336.0
-offset_top = -252.0
-offset_right = 378.0
-offset_bottom = -210.0
+offset_left = 352.0
+offset_top = -220.0
+offset_right = 396.0
+offset_bottom = -176.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -613,16 +620,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="18" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 336.0
-offset_top = -294.0
-offset_right = 378.0
-offset_bottom = -252.0
+offset_left = 352.0
+offset_top = -264.0
+offset_right = 396.0
+offset_bottom = -220.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
@@ -633,16 +640,16 @@ vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="19" type="Label" parent="Labels/Rows"]
-custom_minimum_size = Vector2(42, 42)
+custom_minimum_size = Vector2(44, 44)
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 336.0
-offset_top = -336.0
-offset_right = 378.0
-offset_bottom = -294.0
+offset_left = 352.0
+offset_top = -308.0
+offset_right = 396.0
+offset_bottom = -264.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("2_igfob")
