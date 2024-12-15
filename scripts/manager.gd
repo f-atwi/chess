@@ -2,7 +2,8 @@ extends TileMapLayer
 
 const BLACK_TILE_ATLAS = Vector2i(0, 1)
 const WHITE_TILE_ATLAS = Vector2i(1, 1)
-const HIGHLIGHT_TILE_ATLAS = Vector2i(2, 1)
+const HIGHLIGHT_MOVE_ATLAS = Vector2i(2, 1)
+const HIGHLIGHT_TAKE_ATLAS = Vector2i(1, 2)
 const HIGHLIGHT_PIECE_ATLAS = Vector2i(0, 2)
 
 @export var rotate_black := false
@@ -16,7 +17,15 @@ var highlighted: Array[Vector2i] = []
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	while Utils.occupancy_grid.size() != 64:
+		pass
+	var pieces: Array[Piece]
+	pieces.assign(black.get_children())
+	for piece in pieces:
+		Utils.occupancy_grid[piece.position_board] = Utils.OccupancyState.BLACK
+	pieces.assign(white.get_children())
+	for piece in pieces:
+		Utils.occupancy_grid[piece.position_board] = Utils.OccupancyState.WHITE
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,9 +37,13 @@ func _set_tile(coords: Vector2i, atlas: Vector2i) -> void:
 	set_cell(coords, 1, atlas)
 
 
-func highlight_tile(coords: Vector2i) -> void:
+func highlight_move(coords: Vector2i) -> void:
 	highlighted.append(coords)
-	_set_tile(coords, HIGHLIGHT_TILE_ATLAS)
+	_set_tile(coords, HIGHLIGHT_MOVE_ATLAS)
+
+func highlight_take(coords: Vector2i) -> void:
+	highlighted.append(coords)
+	_set_tile(coords, HIGHLIGHT_TAKE_ATLAS)
 
 func highlight_piece(coords: Vector2i) -> void:
 	highlighted.append(coords)
@@ -52,7 +65,7 @@ func _get_original_tile(coords: Vector2i) -> Vector2i:
 
 func _is_empty(coords: Vector2i) -> bool:
 	# TODO: optimize
-	var pieces := (black.get_children()  + white.get_children()) as Array[Piece]
+	var pieces := (black.get_children() + white.get_children()) as Array[Piece]
 	for piece in pieces:
 		if piece.position_board == coords:
 			return false

@@ -2,7 +2,10 @@ class_name Piece
 extends Sprite2D
 
 enum Type {PAWN, ROOK, KNIGHT, BISHOP, QUEEN, KING}
-enum Allegiance {WHITE=-1, BLACK=1}
+enum Allegiance {
+	WHITE=Utils.OccupancyState.WHITE,
+	BLACK=Utils.OccupancyState.BLACK,
+}
 
 const TEXTURE_PATH = "res://assets/{color}_{piece_type}.png"
 const BEHAVIOUR_SCRIPTS = {
@@ -70,7 +73,10 @@ func select() -> void:
 		board.unhighlight()
 	else:
 		board.highlight_piece(position_board)
-		for tile in behaviour.get_valid_moves(position_board, _allegiance, _first_move):
-			board.highlight_tile(tile)
+		var moves = behaviour.get_valid_moves(position_board, _allegiance, _first_move)
+		for tile in moves["moves"]:
+			board.highlight_move(tile)
+		for tile in moves["takes"]:
+			board.highlight_take(tile)
 		
 	_selected = not _selected
