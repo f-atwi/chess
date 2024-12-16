@@ -1,7 +1,7 @@
 extends Behaviour
 
 
-var DELTAS: Array[Vector2i] = [
+const DELTAS: Array[Vector2i] = [
 	Vector2i(1, 2),
 	Vector2i(1, -2),
 	Vector2i(-1, -2),

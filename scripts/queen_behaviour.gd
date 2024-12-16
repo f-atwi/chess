@@ -1,6 +1,18 @@
 extends Behaviour
 
 
+const DELTAS: Array[Vector2i] = [
+	Vector2i(0, 1),
+	Vector2i(-1, 0),
+	Vector2i(0, -1),
+	Vector2i(1, 0),
+	Vector2i(1, 1),
+	Vector2i(1, -1),
+	Vector2i(-1, -1),
+	Vector2i(-1, 1),
+]
+
+
 func get_valid_moves(
 	coords: Vector2i,
 	allegiance: Utils.Allegiance,
@@ -11,14 +23,7 @@ func get_valid_moves(
 		"takes": [],
 	}
 
-	# Get moves in vertical and horizontal directions
-	add_moves_in_direction(coords, moves, allegiance, Vector2i(0, 1))
-	add_moves_in_direction(coords, moves, allegiance, Vector2i(0, -1))
-	add_moves_in_direction(coords, moves, allegiance, Vector2i(1, 0))
-	add_moves_in_direction(coords, moves, allegiance, Vector2i(-1, 0))
-	add_moves_in_direction(coords, moves, allegiance, Vector2i(1, 1))
-	add_moves_in_direction(coords, moves, allegiance, Vector2i(-1, -1))
-	add_moves_in_direction(coords, moves, allegiance, Vector2i(1, -1))
-	add_moves_in_direction(coords, moves, allegiance, Vector2i(-1, 1))
+	for delta in DELTAS:
+		add_moves_in_direction(coords, moves, allegiance, delta)
 
 	return moves
