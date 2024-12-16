@@ -1,6 +1,7 @@
 extends Behaviour
 
-var DELTAS = [
+
+var DELTAS: Array[Vector2i] = [
 	Vector2i(1, 2),
 	Vector2i(1, -2),
 	Vector2i(-1, -2),
@@ -10,6 +11,7 @@ var DELTAS = [
 	Vector2i(-2, -1),
 	Vector2i(-2, 1),
 ]
+
 
 func get_valid_moves(
 	coords: Vector2i,
@@ -28,7 +30,5 @@ func get_valid_moves(
 				moves["moves"].append(pos)
 			elif Utils.is_enemy(pos, allegiance):
 				moves["takes"].append(pos)
-	
-	return moves
 
 	return moves

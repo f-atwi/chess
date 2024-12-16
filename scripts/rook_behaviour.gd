@@ -1,5 +1,6 @@
 extends Behaviour
 
+
 func get_valid_moves(
 	coords: Vector2i,
 	allegiance: Utils.Allegiance,
