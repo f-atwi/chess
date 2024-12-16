@@ -4,10 +4,11 @@ const BLACK_TILE_ATLAS = Vector2i(0, 1)
 const WHITE_TILE_ATLAS = Vector2i(1, 1)
 const HIGHLIGHT_MOVE_ATLAS = Vector2i(2, 1)
 const HIGHLIGHT_TAKE_ATLAS = Vector2i(1, 2)
+const HIGHLIGHT_CHECK_ATLAS = Vector2i(2, 2)
 const HIGHLIGHT_PIECE_ATLAS = Vector2i(0, 2)
 
 @export var rotate_black := false
- 
+
 var turn := true
 var highlighted: Array[Vector2i] = []
 
@@ -41,17 +42,26 @@ func highlight_move(coords: Vector2i) -> void:
 	highlighted.append(coords)
 	_set_tile(coords, HIGHLIGHT_MOVE_ATLAS)
 
+
 func highlight_take(coords: Vector2i) -> void:
 	highlighted.append(coords)
 	_set_tile(coords, HIGHLIGHT_TAKE_ATLAS)
+
+
+func highlight_check(coords: Vector2i) -> void:
+	highlighted.append(coords)
+	_set_tile(coords, HIGHLIGHT_CHECK_ATLAS)
+
 
 func highlight_piece(coords: Vector2i) -> void:
 	highlighted.append(coords)
 	_set_tile(coords, HIGHLIGHT_PIECE_ATLAS)
 
+
 func unhighlight_tile(coords: Vector2i) -> void:
 	_set_tile(coords, _get_original_tile(coords))
-	
+
+
 func unhighlight() -> void:
 	for tile in highlighted:
 		unhighlight_tile(tile)
@@ -70,4 +80,4 @@ func _is_empty(coords: Vector2i) -> bool:
 		if piece.position_board == coords:
 			return false
 	return true
-			
+
