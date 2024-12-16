@@ -12,8 +12,8 @@ const HIGHLIGHT_PIECE_ATLAS = Vector2i(0, 2)
 var turn := true
 var highlighted: Array[Vector2i] = []
 
-@onready var black: Node2D = $Black
-@onready var white: Node2D = $White
+@onready var black: Node = $Black
+@onready var white: Node = $White
 
 
 # Called when the node enters the scene tree for the first time.
@@ -80,4 +80,3 @@ func _is_empty(coords: Vector2i) -> bool:
 		if piece.position_board == coords:
 			return false
 	return true
-

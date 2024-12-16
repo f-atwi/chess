@@ -10,7 +10,7 @@
 unique_name_in_owner = true
 script = ExtResource("1_pswhs")
 
-[node name="Black" type="Node2D" parent="Board"]
+[node name="Black" type="Node" parent="Board"]
 
 [node name="PawnA" parent="Board/Black" instance=ExtResource("3_o25cj")]
 initial_position_board = Vector2i(0, 6)
@@ -68,7 +68,7 @@ initial_position_board = Vector2i(3, 7)
 piece_type = 5
 initial_position_board = Vector2i(4, 7)
 
-[node name="White" type="Node2D" parent="Board"]
+[node name="White" type="Node" parent="Board"]
 
 [node name="PawnA" parent="Board/White" instance=ExtResource("3_o25cj")]
 initial_position_board = Vector2i(0, 1)
@@ -128,3 +128,5 @@ initial_position_board = Vector2i(4, 0)
 [node name="Camera2D" type="Camera2D" parent="Board"]
 position = Vector2(168, -168)
 drag_left_margin = 0.0
+
+[node name="State" type="Node" parent="Board"]
