@@ -1,5 +1,5 @@
 class_name Piece
-extends Sprite2D
+extends Area2D
 
 
 const TEXTURE_PATH = "res://assets/{color}_{piece_type}.png"
@@ -29,17 +29,18 @@ var _selected := false
 
 var behaviour: Behaviour
 
-@onready var board: TileMapLayer = $"../.."
+@onready var board: TileMapLayer = %Board
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 
 func _ready() -> void:
-	position_board = Vector2i(initial_position_board.x, -initial_position_board.y)
+	position_board = Vector2i(initial_position_x, -initial_position_y)
 	_allegiance = Utils.Allegiance.get(get_parent().name.to_upper())
 	if board.rotate_black and _allegiance == Utils.Allegiance.BLACK:
 		rotate(PI)
-	texture = load(_get_texture_path(TEXTURE_PATH))
+	sprite_2d.texture = load(_get_texture_path(TEXTURE_PATH))
 	_get_behaviour()
-
+	board.on_piece_clicked.connect
 
 func _process(delta: float) -> void:
 	pass
@@ -78,3 +79,9 @@ func select() -> void:
 			board.highlight_take(tile)
 		
 	_selected = not _selected
+
+
+func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
+	if event is InputEventMouseButton and event.is_action_released("click"):
+		select()
+		
