@@ -13,7 +13,10 @@ const BEHAVIOUR_SCRIPTS = {
 }
 
 @export var piece_type: Utils.Type = Utils.Type.PAWN
-@export var initial_position_board: Vector2i
+@export_group("Initial Position")
+@export_range(0, 7) var initial_position_x: int
+@export_range(0, 7) var initial_position_y: int
+
 
 var position_board: Vector2i:
 	set(value):

@@ -13,120 +13,139 @@ script = ExtResource("1_pswhs")
 [node name="Black" type="Node" parent="Board"]
 
 [node name="PawnA" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(0, 6)
+initial_position_y = 6
 
 [node name="PawnB" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(1, 6)
+initial_position_x = 1
+initial_position_y = 6
 
 [node name="PawnC" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(2, 6)
+initial_position_x = 2
+initial_position_y = 6
 
 [node name="PawnD" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(3, 6)
+initial_position_x = 3
+initial_position_y = 6
 
 [node name="PawnE" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(4, 6)
+initial_position_x = 4
+initial_position_y = 6
 
 [node name="PawnF" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(5, 6)
+initial_position_x = 5
+initial_position_y = 6
 
 [node name="PawnG" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(6, 6)
+initial_position_x = 6
+initial_position_y = 6
 
 [node name="PawnH" parent="Board/Black" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(7, 6)
+initial_position_x = 7
+initial_position_y = 6
 
 [node name="RookL" parent="Board/Black" instance=ExtResource("3_o25cj")]
 piece_type = 1
-initial_position_board = Vector2i(0, 7)
+initial_position_y = 7
 
 [node name="RookR" parent="Board/Black" instance=ExtResource("3_o25cj")]
 piece_type = 1
-initial_position_board = Vector2i(7, 7)
+initial_position_x = 7
+initial_position_y = 7
 
 [node name="KnightL" parent="Board/Black" instance=ExtResource("3_o25cj")]
 piece_type = 2
-initial_position_board = Vector2i(1, 7)
+initial_position_x = 1
+initial_position_y = 7
 
 [node name="KnightR" parent="Board/Black" instance=ExtResource("3_o25cj")]
 piece_type = 2
-initial_position_board = Vector2i(6, 7)
+initial_position_x = 6
+initial_position_y = 7
 
 [node name="BishopL" parent="Board/Black" instance=ExtResource("3_o25cj")]
 piece_type = 3
-initial_position_board = Vector2i(2, 7)
+initial_position_x = 2
+initial_position_y = 7
 
 [node name="BishopR" parent="Board/Black" instance=ExtResource("3_o25cj")]
 piece_type = 3
-initial_position_board = Vector2i(5, 7)
+initial_position_x = 5
+initial_position_y = 7
 
 [node name="Queen" parent="Board/Black" instance=ExtResource("3_o25cj")]
 piece_type = 4
-initial_position_board = Vector2i(3, 7)
+initial_position_x = 3
+initial_position_y = 7
 
 [node name="King" parent="Board/Black" instance=ExtResource("3_o25cj")]
 piece_type = 5
-initial_position_board = Vector2i(4, 7)
+initial_position_x = 4
+initial_position_y = 7
 
 [node name="White" type="Node" parent="Board"]
 
 [node name="PawnA" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(0, 1)
+initial_position_y = 1
 
 [node name="PawnB" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(1, 1)
+initial_position_x = 1
+initial_position_y = 1
 
 [node name="PawnC" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(2, 1)
+initial_position_x = 2
+initial_position_y = 1
 
 [node name="PawnD" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(3, 1)
+initial_position_x = 3
+initial_position_y = 1
 
 [node name="PawnE" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(4, 1)
+initial_position_x = 4
+initial_position_y = 1
 
 [node name="PawnF" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(5, 1)
+initial_position_x = 5
+initial_position_y = 1
 
 [node name="PawnG" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(6, 1)
+initial_position_x = 6
+initial_position_y = 1
 
 [node name="PawnH" parent="Board/White" instance=ExtResource("3_o25cj")]
-initial_position_board = Vector2i(7, 1)
+initial_position_x = 7
+initial_position_y = 1
 
 [node name="RookL" parent="Board/White" instance=ExtResource("3_o25cj")]
 piece_type = 1
 
 [node name="RookR" parent="Board/White" instance=ExtResource("3_o25cj")]
 piece_type = 1
-initial_position_board = Vector2i(7, 0)
+initial_position_x = 7
 
 [node name="KnightL" parent="Board/White" instance=ExtResource("3_o25cj")]
 piece_type = 2
-initial_position_board = Vector2i(1, 0)
+initial_position_x = 1
 
 [node name="KnightR" parent="Board/White" instance=ExtResource("3_o25cj")]
 piece_type = 2
-initial_position_board = Vector2i(6, 0)
+initial_position_x = 6
 
 [node name="BishopL" parent="Board/White" instance=ExtResource("3_o25cj")]
 piece_type = 3
-initial_position_board = Vector2i(2, 0)
+initial_position_x = 2
 
 [node name="BishopR" parent="Board/White" instance=ExtResource("3_o25cj")]
 piece_type = 3
-initial_position_board = Vector2i(5, 0)
+initial_position_x = 5
 
 [node name="Queen" parent="Board/White" instance=ExtResource("3_o25cj")]
 piece_type = 4
-initial_position_board = Vector2i(3, 0)
+initial_position_x = 3
 
 [node name="King" parent="Board/White" instance=ExtResource("3_o25cj")]
 piece_type = 5
-initial_position_board = Vector2i(4, 0)
+initial_position_x = 4
 
 [node name="Camera2D" type="Camera2D" parent="Board"]
 position = Vector2(168, -168)
 drag_left_margin = 0.0
-
-[node name="State" type="Node" parent="Board"]
