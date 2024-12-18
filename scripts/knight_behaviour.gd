@@ -18,17 +18,18 @@ func get_valid_moves(
 	allegiance: Utils.Allegiance,
 	_first_move: bool = false,
 ) -> Dictionary:
-	var moves: Dictionary = {
-		"moves": [],
-		"takes": [],
-	}
+	var moves: Array[Vector2i] = []
+	var takes: Array[Vector2i] = []
 	var pos: Vector2i
 	for delta in DELTAS:
 		pos = coords + delta
 		if Utils.is_within_bounds(pos):
 			if Utils.is_empty(pos):
-				moves["moves"].append(pos)
+				moves.append(pos)
 			elif Utils.is_enemy(pos, allegiance):
-				moves["takes"].append(pos)
+				takes.append(pos)
 
-	return moves
+	return {
+		"moves": moves,
+		"takes": takes,
+	}

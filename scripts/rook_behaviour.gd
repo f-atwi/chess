@@ -14,13 +14,14 @@ func get_valid_moves(
 	allegiance: Utils.Allegiance,
 	first_move: bool = false,
 ) -> Dictionary:
-	var moves: Dictionary = {
-		"moves": [],
-		"takes": [],
-	}
+	var moves: Array[Vector2i] = []
+	var takes: Array[Vector2i] = []
 
 	# Get moves in vertical and horizontal directions
 	for delta in DELTAS:
-		add_moves_in_direction(coords, moves, allegiance, delta)
+		add_moves_in_direction(coords, moves, takes, allegiance, delta)
 
-	return moves
+	return {
+		"moves": moves,
+		"takes": takes,
+	}

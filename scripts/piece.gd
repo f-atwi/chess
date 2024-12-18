@@ -68,17 +68,18 @@ func _get_behaviour() -> void:
 
 
 func select() -> void:
-	if _selected:
-		board.unhighlight()
-	else:
-		board.highlight_piece(position_board)
-		var moves := behaviour.get_valid_moves(position_board, _allegiance, _first_move)
-		for tile: Vector2i in moves["moves"]:
-			board.highlight_move(tile)
-		for tile: Vector2i in moves["takes"]:
-			board.highlight_take(tile)
-		
-	_selected = not _selected
+	board.on_piece_clicked.emit(self)
+	#if _selected:
+		#board.unhighlight()
+	#else:
+		#board.highlight_piece(position_board)
+		#var moves := behaviour.get_valid_moves(position_board, _allegiance, _first_move)
+		#for tile: Vector2i in moves["moves"]:
+			#board.highlight_move(tile)
+		#for tile: Vector2i in moves["takes"]:
+			#board.highlight_take(tile)
+		#
+	#_selected = not _selected
 
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
