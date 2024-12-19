@@ -18,7 +18,7 @@ func add_moves_in_direction(
 	takes: Array[Vector2i],
 	allegiance: Utils.Allegiance,
 	delta: Vector2i,
-	once: bool = true,
+	once: bool = false,
 	) -> void:
 	while true:
 		coords += delta

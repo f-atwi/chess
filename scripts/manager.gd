@@ -2,6 +2,7 @@ extends TileMapLayer
 
 
 signal on_piece_clicked(piece: Piece)
+signal on_mouse_click(coords: Vector2i)
 
 const BLACK_TILE_ATLAS = Vector2i(0, 1)
 const WHITE_TILE_ATLAS = Vector2i(1, 1)
@@ -19,24 +20,39 @@ var selected: Piece = null
 @onready var black: Node = $Black
 @onready var white: Node = $White
 
+func _unhandled_input(event: InputEvent) -> void:
+	if event is InputEventMouseButton and event.is_action_released("click"):
+		event = make_input_local(event)
+		on_mouse_click.emit(local_to_map(event.position))
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	while Utils.occupancy_grid.size() != 64:
 		pass
-	var pieces: Array[Piece]
-	pieces.assign(black.get_children())
-	for piece in pieces:
-		Utils.occupancy_grid[piece.position_board] = Utils.OccupancyState.BLACK
-	pieces.assign(white.get_children())
-	for piece in pieces:
-		Utils.occupancy_grid[piece.position_board] = Utils.OccupancyState.WHITE
-		
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	set_process(false)
+	await select()
+	var valid := false
+	while not valid:
+		valid = await move_selected()
+	unhighlight()
+	highlighted.clear()
+	selected = null
+	set_process(true)
+	pass
 
 
 func select()-> void:
 	selected = await on_piece_clicked
-	var moves: Dictionary = selected.behaviour.get_valid_moves(selected.position_board, selected._allegiance, selected._first_move)
+	var moves: Dictionary = selected.behaviour.get_valid_moves(
+		selected.position_board,
+		selected._allegiance,
+		selected._first_move,
+	)
 	unhighlight()
 	highlight_piece(selected.position_board)
 	for tile: Vector2i in moves["moves"]:
@@ -44,15 +60,15 @@ func select()-> void:
 	for tile: Vector2i in moves["takes"]:
 		highlight_take(tile)
 	highlighted += moves["moves"] + moves["takes"]
-	
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	set_process(false)
-	await select()
-	set_process(true)
-	pass
+func move_selected() -> bool:
+	var coords: Vector2i = await on_mouse_click
+	if coords in highlighted and coords != selected.position_board:
+		Utils.move_piece(selected.position_board, coords) # Fix occpancy becomes empty when running over
+		selected.move(coords)
+		return true
+	return false
 
 
 func highlight_move(coords: Vector2i) -> void:

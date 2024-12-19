@@ -25,7 +25,6 @@ var position_board: Vector2i:
 
 var _allegiance: Utils.Allegiance = Utils.Allegiance.WHITE
 var _first_move := true
-var _selected := false
 
 var behaviour: Behaviour
 
@@ -40,6 +39,7 @@ func _ready() -> void:
 		rotate(PI)
 	sprite_2d.texture = load(_get_texture_path(TEXTURE_PATH))
 	_get_behaviour()
+	Utils.occupancy_grid[position_board] = _allegiance
 	board.on_piece_clicked.connect
 
 func _process(delta: float) -> void:
@@ -65,21 +65,15 @@ func to_chess_notation(pos: Vector2i) -> String:
 
 func _get_behaviour() -> void:
 	behaviour = BEHAVIOUR_SCRIPTS[piece_type].new()
+	
+
+func move(coords: Vector2i) -> void:
+	_first_move = false
+	position_board = coords
 
 
 func select() -> void:
 	board.on_piece_clicked.emit(self)
-	#if _selected:
-		#board.unhighlight()
-	#else:
-		#board.highlight_piece(position_board)
-		#var moves := behaviour.get_valid_moves(position_board, _allegiance, _first_move)
-		#for tile: Vector2i in moves["moves"]:
-			#board.highlight_move(tile)
-		#for tile: Vector2i in moves["takes"]:
-			#board.highlight_take(tile)
-		#
-	#_selected = not _selected
 
 
 func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
