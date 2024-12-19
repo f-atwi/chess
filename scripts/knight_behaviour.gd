@@ -20,14 +20,9 @@ func get_valid_moves(
 ) -> Dictionary:
 	var moves: Array[Vector2i] = []
 	var takes: Array[Vector2i] = []
-	var pos: Vector2i
+
 	for delta in DELTAS:
-		pos = coords + delta
-		if Utils.is_within_bounds(pos):
-			if Utils.is_empty(pos):
-				moves.append(pos)
-			elif Utils.is_enemy(pos, allegiance):
-				takes.append(pos)
+		add_moves_in_direction(coords, moves, takes, allegiance, delta, true)
 
 	return {
 		"moves": moves,

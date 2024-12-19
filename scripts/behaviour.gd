@@ -18,6 +18,7 @@ func add_moves_in_direction(
 	takes: Array[Vector2i],
 	allegiance: Utils.Allegiance,
 	delta: Vector2i,
+	once: bool = true,
 	) -> void:
 	while true:
 		coords += delta
@@ -29,4 +30,6 @@ func add_moves_in_direction(
 			takes.append(coords)
 			return
 		else:
+			return
+		if once:
 			return
