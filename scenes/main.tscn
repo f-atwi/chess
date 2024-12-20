@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://bfly24huoap2f"]
+[gd_scene load_steps=7 format=3 uid="uid://bfly24huoap2f"]
 
 [ext_resource type="Script" path="res://scripts/manager.gd" id="1_pswhs"]
 [ext_resource type="PackedScene" uid="uid://c4y6p5ixm43pe" path="res://scenes/chessboard.tscn" id="2_iv4mf"]
 [ext_resource type="PackedScene" uid="uid://d0yx13jf10558" path="res://scenes/piece.tscn" id="3_o25cj"]
+[ext_resource type="Script" path="res://scripts/state.gd" id="4_5sah3"]
+[ext_resource type="Script" path="res://scripts/select.gd" id="5_erl5r"]
+[ext_resource type="Script" path="res://scripts/move.gd" id="6_12l82"]
 
 [node name="Main" type="Node2D"]
 
@@ -149,3 +152,13 @@ initial_position_x = 4
 [node name="Camera2D" type="Camera2D" parent="Board"]
 position = Vector2(168, -168)
 drag_left_margin = 0.0
+
+[node name="State" type="Node" parent="Board"]
+unique_name_in_owner = true
+script = ExtResource("4_5sah3")
+
+[node name="Select" type="Node" parent="Board/State"]
+script = ExtResource("5_erl5r")
+
+[node name="Move" type="Node" parent="Board/State"]
+script = ExtResource("6_12l82")
