@@ -76,7 +76,12 @@ func select() -> void:
 	board.on_piece_clicked.emit(self)
 
 
-func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_action_released("click"):
-		select()
-		
+func _load_texture() -> void:
+	sprite_2d.texture = load(TEXTURE_PATH.format({
+		"color": get_parent().name.to_lower(),
+		"piece_type": Utils.Type.find_key(piece_type).to_lower()
+	}))
+
+
+func _get_behaviour() -> void:
+	behaviour = BEHAVIOUR_SCRIPTS[piece_type].new()
