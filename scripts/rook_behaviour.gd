@@ -15,7 +15,7 @@ func get_valid_moves(
 	first_move: bool = false,
 ) -> Dictionary:
 	var moves: Array[Vector2i] = []
-	var takes: Array[Vector2i] = []
+	var takes: Dictionary = {}
 
 	# Get moves in vertical and horizontal directions
 	for delta in DELTAS:
