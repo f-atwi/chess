@@ -72,8 +72,8 @@ func move(coords: Vector2i) -> void:
 	position_board = coords
 
 
-func select() -> void:
-	board.on_piece_clicked.emit(self)
+func die() -> void:
+	queue_free()
 
 
 func _load_texture() -> void:
