@@ -19,7 +19,7 @@ func get_valid_moves(
 	_first_move: bool = false,
 ) -> Dictionary:
 	var moves: Array[Vector2i] = []
-	var takes: Array[Vector2i] = []
+	var takes: Dictionary = {}
 
 	for delta in DELTAS:
 		add_moves_in_direction(coords, moves, takes, allegiance, delta, true)

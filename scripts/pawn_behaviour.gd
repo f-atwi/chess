@@ -7,7 +7,7 @@ func get_valid_moves(
 	first_move: bool = false,
 ) -> Dictionary:
 	var moves: Array[Vector2i] = []
-	var takes: Array[Vector2i] = []
+	var takes: Dictionary = {}
 	var pos := coords
 	
 	# Get moves
@@ -26,9 +26,10 @@ func get_valid_moves(
 	pos.y += allegiance
 	for i: int in [1, -1]:
 		pos.x = coords.x + i
-		if Utils.is_within_bounds(pos) and Utils.is_enemy(pos, allegiance):
-			takes.append(pos)
-	
+		if Utils.is_within_bounds(pos):
+			var enemy: Piece = Utils.is_enemy(pos, allegiance) 
+			if enemy:
+				takes[pos] = enemy
 	return {
 		"moves": moves,
 		"takes": takes,

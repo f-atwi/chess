@@ -15,7 +15,7 @@ func get_valid_moves(
 func add_moves_in_direction(
 	coords: Vector2i,
 	moves: Array[Vector2i],
-	takes: Array[Vector2i],
+	takes: Dictionary,
 	allegiance: Utils.Allegiance,
 	delta: Vector2i,
 	once: bool = false,
@@ -24,10 +24,11 @@ func add_moves_in_direction(
 		coords += delta
 		if not Utils.is_within_bounds(coords):
 			return
+		var enemy: Piece = Utils.is_enemy(coords, allegiance)
 		if Utils.is_empty(coords):
 			moves.append(coords)
-		elif Utils.is_enemy(coords, allegiance):
-			takes.append(coords)
+		elif enemy:
+			takes[coords] = enemy
 			return
 		else:
 			return
