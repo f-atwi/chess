@@ -10,7 +10,7 @@ const HIGHLIGHT_PIECE_ATLAS = Vector2i(0, 2)
 
 @export var rotate_black := false
 
-var turn := true
+var turn := Utils.Allegiance.WHITE
 var highlighted_moves: Array[Vector2i] = []
 var highlighted_takes: Dictionary = {}
 var highlighted: Array[Vector2i] = []
@@ -23,7 +23,17 @@ var selected: Piece = null
 func _unhandled_input(event: InputEvent) -> void:
 	if event is InputEventMouseButton and event.is_action_released("click"):
 		event = make_input_local(event)
-		state.trigger_action.emit(Utils.Action.MOVE, { "coords" :local_to_map(event.position) })
+		var coords := local_to_map(event.position)
+		if not Utils.is_within_bounds(coords):
+			return
+		var piece: Piece = Utils.occupancy_grid[coords]
+		if coords in highlighted_moves or coords in highlighted_takes:
+			move(coords)
+		elif piece and piece._allegiance == turn:
+			if piece == selected:
+				unselect()
+			else:
+				select(piece)
 
 
 func _ready() -> void:
@@ -31,14 +41,15 @@ func _ready() -> void:
 		pass
 
 
-func select(params: Dictionary) -> bool:
-	if params["piece"].is_queued_for_deletion(): # is there a better way?
-		return false
-	unhighlight()
-	if selected == params["piece"]:
-		selected = null
-		return false
-	selected = params["piece"]
+func switch_turn() -> void:
+	if turn == Utils.Allegiance.WHITE:
+		turn = Utils.Allegiance.BLACK
+	else:
+		turn = Utils.Allegiance.WHITE
+
+
+func select(piece: Piece) -> void:
+	selected = piece
 	var moves: Dictionary = selected.behaviour.get_valid_moves(
 		selected.position_board,
 		selected._allegiance,
@@ -52,19 +63,25 @@ func select(params: Dictionary) -> bool:
 		highlight_take(tile_pos, moves["takes"][tile_pos])
 	highlighted_moves = moves["moves"]
 	highlighted_takes = moves["takes"]
-	return true
 
 
-func move(params: Dictionary) -> void:
-	var coords: Vector2i = params["coords"]
+func unselect() -> void:
+	selected = null
+	unhighlight()
+
+
+func move(coords: Vector2i) -> void:
 	if coords in highlighted_moves:
 		Utils.move_piece(selected.position_board, coords)
 		selected.move(coords)
+		unhighlight()
 	elif highlighted_takes.has(coords):
 		highlighted_takes[coords].die()
 		Utils.move_piece(selected.position_board, coords)
 		selected.move(coords)
-
+		unhighlight()
+	selected = null
+	switch_turn()
 
 func highlight_move(coords: Vector2i) -> void:
 	highlighted_moves.append(coords)

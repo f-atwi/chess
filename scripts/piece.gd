@@ -1,5 +1,5 @@
 class_name Piece
-extends Area2D
+extends Sprite2D
 
 
 const TEXTURE_PATH = "res://assets/{color}_{piece_type}.png"
@@ -25,13 +25,10 @@ var position_board: Vector2i:
 
 var _allegiance: Utils.Allegiance = Utils.Allegiance.WHITE
 var _first_move := true
-var _last_click: int = 0
 
 var behaviour: Behaviour
 
 @onready var board: TileMapLayer = %Board
-@onready var sprite_2d: Sprite2D = $Sprite2D
-@onready var state: Node = %State
 
 
 func _ready() -> void:
@@ -44,18 +41,6 @@ func _ready() -> void:
 	Utils.occupancy_grid[position_board] = self
 
 
-func _input_event(_viewport: Viewport, event: InputEvent, _shape_idx: int) -> void:
-	if event is InputEventMouseButton and event.is_action_released("click"):
-		var current_click := Time.get_ticks_msec()
-		if current_click - _last_click > 30:
-			_last_click = current_click
-			select()
-
-
-func select() -> void:
-	state.trigger_action.emit(Utils.Action.SELECT, { "piece": self })
-
-
 func move(coords: Vector2i) -> void:
 	_first_move = false
 	position_board = coords
@@ -66,7 +51,7 @@ func die() -> void:
 
 
 func _load_texture() -> void:
-	sprite_2d.texture = load(TEXTURE_PATH.format({
+	texture = load(TEXTURE_PATH.format({
 		"color": get_parent().name.to_lower(),
 		"piece_type": Utils.Type.find_key(piece_type).to_lower()
 	}))
